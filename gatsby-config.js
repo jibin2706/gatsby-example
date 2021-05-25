@@ -1,25 +1,36 @@
 module.exports = {
-  siteMetadata: {
-    title: "gatsby-example",
-  },
+  /* Your site config here */
   plugins: [
-    "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
+    `gatsby-plugin-postcss`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-tsconfig-paths`,
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        icon: "src/images/icon.png",
+        name: `assets`,
+        path: `${__dirname}/static/assets`,
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-plugin-react-svg',
       options: {
-        name: "images",
-        path: "./src/images/",
+        rule: {
+          include: /images/,
+        },
       },
-      __key: "images",
+    },
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      options: {
+        analyzerMode: 'static',
+        defaultSizes: 'gzip',
+        generateStatsFile: true,
+      },
     },
   ],
-};
+}
