@@ -17,14 +17,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: /images/,
-        },
-      },
-    },
-    {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
         analyzerMode: 'static',
