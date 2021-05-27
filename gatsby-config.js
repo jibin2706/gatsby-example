@@ -6,7 +6,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-tsconfig-paths`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
